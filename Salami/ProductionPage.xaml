@@ -1,0 +1,424 @@
+<Page
+    x:Class="Salami.ProductionPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Salami"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer>
+        <StackPanel Spacing="24" Padding="24">
+            <!-- Header -->
+            <StackPanel Spacing="12">
+                <TextBlock Text="Salami Production Process" 
+                          FontSize="42" 
+                          FontWeight="Bold"/>
+                <TextBlock Text="From meat selection to aging: the art and science of salami making" 
+                          FontSize="18" 
+                          Opacity="0.8"/>
+            </StackPanel>
+
+            <!-- Overview -->
+            <Border Background="{StaticResource SalamiRed}" 
+                   CornerRadius="12" 
+                   Padding="32">
+                <StackPanel Spacing="16">
+                    <TextBlock Text="The Seven Sacred Steps" 
+                              FontSize="32" 
+                              FontWeight="Bold"
+                              Foreground="White"
+                              HorizontalAlignment="Center"/>
+                    <TextBlock Text="Creating salami is both an art and a science, requiring precise temperature control, timing, and traditional knowledge passed down through generations." 
+                              FontSize="16"
+                              Foreground="{StaticResource SalamiPink}"
+                              TextAlignment="Center"
+                              TextWrapping="Wrap"
+                              HorizontalAlignment="Center"
+                              MaxWidth="700"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Step 1: Meat Selection -->
+            <StackPanel Spacing="16">
+                <Border Background="{StaticResource SalamiPink}" 
+                       CornerRadius="8" 
+                       Padding="20">
+                    <StackPanel Orientation="Horizontal" Spacing="12">
+                        <TextBlock Text="1️⃣" FontSize="28"/>
+                        <TextBlock Text="Meat Selection and Grinding" 
+                                  FontSize="28" 
+                                  FontWeight="Bold"
+                                  Foreground="{StaticResource SalamiRed}"
+                                  VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+                
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="16">
+                        <TextBlock FontSize="18" TextWrapping="Wrap">
+                            The foundation of excellent salami begins with selecting premium pork cuts, 
+                            often from the shoulder and leg. Some varieties include beef for additional 
+                            flavor complexity. The meat must be kept cold throughout processing.
+                        </TextBlock>
+                        
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <StackPanel Grid.Column="0" Spacing="8" Margin="0,0,8,0">
+                                <TextBlock Text="Specifications:" FontSize="18" FontWeight="SemiBold"/>
+                                <TextBlock Text="• Temperature: 35-40°F (2-4°C)" FontSize="16"/>
+                                <TextBlock Text="• Duration: 1-2 hours" FontSize="16"/>
+                                <TextBlock Text="• Fat content: 25-30%" FontSize="16"/>
+                            </StackPanel>
+                            
+                            <StackPanel Grid.Column="1" Spacing="8" Margin="8,0,0,0">
+                                <TextBlock Text="Key Points:" FontSize="18" FontWeight="SemiBold"/>
+                                <TextBlock Text="• Use cold meat for best texture" FontSize="16"/>
+                                <TextBlock Text="• Grinder plates determine final texture" FontSize="16"/>
+                                <TextBlock Text="• Quality of meat determines final product" FontSize="16"/>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Step 2: Mixing and Seasoning -->
+            <StackPanel Spacing="16">
+                <Border Background="{StaticResource SalamiPink}" 
+                       CornerRadius="8" 
+                       Padding="20">
+                    <StackPanel Orientation="Horizontal" Spacing="12">
+                        <TextBlock Text="2️⃣" FontSize="28"/>
+                        <TextBlock Text="Mixing and Seasoning" 
+                                  FontSize="28" 
+                                  FontWeight="Bold"
+                                  Foreground="{StaticResource SalamiRed}"
+                                  VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+                
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="16">
+                        <TextBlock FontSize="18" TextWrapping="Wrap">
+                            Ground meat is combined with carefully measured salt, spices, curing agents 
+                            (sodium nitrite), and often wine or garlic. This is where each salami variety 
+                            gets its unique character. The mixture must be thoroughly blended to ensure 
+                            even distribution of ingredients.
+                        </TextBlock>
+                        
+                        <StackPanel Spacing="8">
+                            <TextBlock Text="Critical Ingredients:" FontSize="18" FontWeight="SemiBold"/>
+                            <TextBlock Text="• Salt (2.5-3% of meat weight) - Flavor and preservation" FontSize="16"/>
+                            <TextBlock Text="• Cure (sodium nitrite) - Prevents harmful bacteria and gives color" FontSize="16"/>
+                            <TextBlock Text="• Sugar - Feeds beneficial bacteria during fermentation" FontSize="16"/>
+                            <TextBlock Text="• Spices - Defines regional character" FontSize="16"/>
+                            <TextBlock Text="• Starter cultures - Ensures consistent fermentation" FontSize="16"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Step 3: Stuffing -->
+            <StackPanel Spacing="16">
+                <Border Background="{StaticResource SalamiPink}" 
+                       CornerRadius="8" 
+                       Padding="20">
+                    <StackPanel Orientation="Horizontal" Spacing="12">
+                        <TextBlock Text="3️⃣" FontSize="28"/>
+                        <TextBlock Text="Stuffing into Casings" 
+                                  FontSize="28" 
+                                  FontWeight="Bold"
+                                  Foreground="{StaticResource SalamiRed}"
+                                  VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+                
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="16">
+                        <TextBlock FontSize="18" TextWrapping="Wrap">
+                            The seasoned meat mixture is loaded into a sausage stuffer and carefully 
+                            packed into casings. Natural casings from pork or beef intestines are 
+                            traditional, though synthetic casings are sometimes used. It's crucial to 
+                            eliminate air pockets which could lead to spoilage.
+                        </TextBlock>
+                        
+                        <StackPanel Spacing="8">
+                            <TextBlock Text="Casing Types:" FontSize="18" FontWeight="SemiBold"/>
+                            <TextBlock Text="• Natural (hog or beef) - Traditional, breathable, best flavor" FontSize="16"/>
+                            <TextBlock Text="• Collagen - Uniform, edible, consistent results" FontSize="16"/>
+                            <TextBlock Text="• Fibrous - Large diameter salamis, removed before eating" FontSize="16"/>
+                        </StackPanel>
+                        
+                        <TextBlock FontSize="16" Opacity="0.8" TextWrapping="Wrap">
+                            Artisan producers prefer natural casings as they allow the salami to breathe 
+                            during aging, contributing to better flavor development and the characteristic 
+                            white mold bloom.
+                        </TextBlock>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Step 4: Fermentation -->
+            <StackPanel Spacing="16">
+                <Border Background="{StaticResource SalamiPink}" 
+                       CornerRadius="8" 
+                       Padding="20">
+                    <StackPanel Orientation="Horizontal" Spacing="12">
+                        <TextBlock Text="4️⃣" FontSize="28"/>
+                        <TextBlock Text="Fermentation" 
+                                  FontSize="28" 
+                                  FontWeight="Bold"
+                                  Foreground="{StaticResource SalamiRed}"
+                                  VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+                
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="16">
+                        <TextBlock FontSize="18" TextWrapping="Wrap">
+                            This is the most critical phase for food safety and flavor development. 
+                            Salamis are hung in a warm, humid chamber where beneficial bacteria 
+                            (Lactobacillus) convert sugars into lactic acid, lowering the pH and 
+                            creating an inhospitable environment for harmful pathogens.
+                        </TextBlock>
+                        
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <Border Grid.Column="0" 
+                                   Background="{StaticResource SalamiRed}" 
+                                   CornerRadius="8" 
+                                   Padding="16" 
+                                   Margin="0,0,8,0">
+                                <StackPanel Spacing="8">
+                                    <TextBlock Text="Conditions" FontSize="18" FontWeight="SemiBold" Foreground="White"/>
+                                    <TextBlock Text="Temperature: 65-75°F" FontSize="16" Foreground="White"/>
+                                    <TextBlock Text="Humidity: 85-95%" FontSize="16" Foreground="White"/>
+                                    <TextBlock Text="Duration: 1-3 days" FontSize="16" Foreground="White"/>
+                                    <TextBlock Text="pH target: 4.8-5.2" FontSize="16" Foreground="White"/>
+                                </StackPanel>
+                            </Border>
+                            
+                            <StackPanel Grid.Column="1" Spacing="8" Margin="8,0,0,0">
+                                <TextBlock Text="What Happens:" FontSize="18" FontWeight="SemiBold"/>
+                                <TextBlock Text="• Bacteria multiply rapidly" FontSize="16"/>
+                                <TextBlock Text="• Lactic acid accumulates" FontSize="16"/>
+                                <TextBlock Text="• pH drops significantly" FontSize="16"/>
+                                <TextBlock Text="• Tangy flavor develops" FontSize="16"/>
+                                <TextBlock Text="• Safety barrier established" FontSize="16"/>
+                            </StackPanel>
+                        </Grid>
+                        
+                        <Border Background="{StaticResource SalamiPink}" 
+                               CornerRadius="8" 
+                               Padding="16">
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                ⚠️ This step cannot be rushed! Proper fermentation is essential for both 
+                                food safety and achieving the characteristic tangy flavor of salami. 
+                                Modern producers monitor pH constantly to ensure the process is proceeding correctly.
+                            </TextBlock>
+                        </Border>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Step 5: Drying/Aging -->
+            <StackPanel Spacing="16">
+                <Border Background="{StaticResource SalamiPink}" 
+                       CornerRadius="8" 
+                       Padding="20">
+                    <StackPanel Orientation="Horizontal" Spacing="12">
+                        <TextBlock Text="5️⃣" FontSize="28"/>
+                        <TextBlock Text="Drying and Aging" 
+                                  FontSize="28" 
+                                  FontWeight="Bold"
+                                  Foreground="{StaticResource SalamiRed}"
+                                  VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+                
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="16">
+                        <TextBlock FontSize="18" TextWrapping="Wrap">
+                            The longest and most transformative phase. Salamis hang in carefully 
+                            controlled rooms where moisture gradually evaporates, flavors concentrate, 
+                            and complexity develops. This can take anywhere from 3 weeks to over 6 months 
+                            depending on the variety and desired characteristics.
+                        </TextBlock>
+                        
+                        <StackPanel Spacing="8">
+                            <TextBlock Text="Aging Progression:" FontSize="18" FontWeight="SemiBold"/>
+                            <TextBlock Text="• Week 1-2: Initial drying, casing firms up" FontSize="16"/>
+                            <TextBlock Text="• Week 3-4: Significant moisture loss, flavors intensify" FontSize="16"/>
+                            <TextBlock Text="• Month 2-3: White mold may appear (beneficial!)" FontSize="16"/>
+                            <TextBlock Text="• Month 4+: Deep flavor development, firm texture" FontSize="16"/>
+                        </StackPanel>
+                        
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <StackPanel Grid.Column="0" Spacing="8" Margin="0,0,8,0">
+                                <TextBlock Text="Starting Conditions:" FontSize="16" FontWeight="SemiBold"/>
+                                <TextBlock Text="Temperature: 60°F" FontSize="14"/>
+                                <TextBlock Text="Humidity: 75-80%" FontSize="14"/>
+                            </StackPanel>
+                            
+                            <StackPanel Grid.Column="1" Spacing="8" Margin="8,0,0,0">
+                                <TextBlock Text="Final Conditions:" FontSize="16" FontWeight="SemiBold"/>
+                                <TextBlock Text="Temperature: 50-55°F" FontSize="14"/>
+                                <TextBlock Text="Humidity: 60-70%" FontSize="14"/>
+                            </StackPanel>
+                        </Grid>
+                        
+                        <TextBlock FontSize="16" Opacity="0.8" TextWrapping="Wrap">
+                            During aging, salami loses 30-40% of its weight through moisture evaporation. 
+                            This concentrates flavors and creates the firm, sliceable texture we associate 
+                            with quality salami.
+                        </TextBlock>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Step 6: Quality Testing -->
+            <StackPanel Spacing="16">
+                <Border Background="{StaticResource SalamiPink}" 
+                       CornerRadius="8" 
+                       Padding="20">
+                    <StackPanel Orientation="Horizontal" Spacing="12">
+                        <TextBlock Text="6️⃣" FontSize="28"/>
+                        <TextBlock Text="Quality Testing" 
+                                  FontSize="28" 
+                                  FontWeight="Bold"
+                                  Foreground="{StaticResource SalamiRed}"
+                                  VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+                
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="16">
+                        <TextBlock FontSize="18" TextWrapping="Wrap">
+                            Throughout the process, especially during and after fermentation, producers 
+                            conduct rigorous testing to ensure quality and safety standards are met.
+                        </TextBlock>
+                        
+                        <StackPanel Spacing="8">
+                            <TextBlock Text="Tests Performed:" FontSize="18" FontWeight="SemiBold"/>
+                            <TextBlock Text="• pH Testing - Must be below 5.3 for safety" FontSize="16"/>
+                            <TextBlock Text="• Water Activity - Target below 0.92" FontSize="16"/>
+                            <TextBlock Text="• Moisture Content - Ensures proper drying" FontSize="16"/>
+                            <TextBlock Text="• Visual Inspection - Check for defects" FontSize="16"/>
+                            <TextBlock Text="• Sensory Evaluation - Taste, aroma, texture" FontSize="16"/>
+                            <TextBlock Text="• Microbiological Testing - Verify safety" FontSize="16"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Step 7: Packaging -->
+            <StackPanel Spacing="16">
+                <Border Background="{StaticResource SalamiPink}" 
+                       CornerRadius="8" 
+                       Padding="20">
+                    <StackPanel Orientation="Horizontal" Spacing="12">
+                        <TextBlock Text="7️⃣" FontSize="28"/>
+                        <TextBlock Text="Packaging and Storage" 
+                                  FontSize="28" 
+                                  FontWeight="Bold"
+                                  Foreground="{StaticResource SalamiRed}"
+                                  VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+                
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="16">
+                        <TextBlock FontSize="18" TextWrapping="Wrap">
+                            Once fully aged, salami is ready for packaging. Some are sold whole with 
+                            the natural mold coating intact, while others are cleaned and sliced. 
+                            Packaging methods vary based on target market and product specifications.
+                        </TextBlock>
+                        
+                        <StackPanel Spacing="8">
+                            <TextBlock Text="Packaging Methods:" FontSize="18" FontWeight="SemiBold"/>
+                            <TextBlock Text="• Vacuum Sealed - Extends shelf life, convenient" FontSize="16"/>
+                            <TextBlock Text="• Natural Casing Intact - Traditional presentation" FontSize="16"/>
+                            <TextBlock Text="• Pre-sliced - Ready to use, modern convenience" FontSize="16"/>
+                            <TextBlock Text="• Wax Coating - Traditional protection method" FontSize="16"/>
+                        </StackPanel>
+                        
+                        <Border Background="{StaticResource SalamiRed}" 
+                               CornerRadius="8" 
+                               Padding="16">
+                            <StackPanel Spacing="8">
+                                <TextBlock Text="Storage Tips:" 
+                                          FontSize="18" 
+                                          FontWeight="SemiBold"
+                                          Foreground="White"/>
+                                <TextBlock TextWrapping="Wrap" Foreground="White">
+                                    • Store in cool, dry place (50-60°F ideal)
+                                </TextBlock>
+                                <TextBlock TextWrapping="Wrap" Foreground="White">
+                                    • Once cut, wrap in parchment paper, not plastic
+                                </TextBlock>
+                                <TextBlock TextWrapping="Wrap" Foreground="White">
+                                    • White mold on exterior is normal and edible
+                                </TextBlock>
+                                <TextBlock TextWrapping="Wrap" Foreground="White">
+                                    • Whole salamis can age further at home
+                                </TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Timeline Summary -->
+            <Border Background="{StaticResource SalamiPink}" 
+                   CornerRadius="12" 
+                   Padding="32">
+                <StackPanel Spacing="16">
+                    <TextBlock Text="Timeline Summary" 
+                              FontSize="32" 
+                              FontWeight="Bold"
+                              Foreground="{StaticResource SalamiRed}"
+                              HorizontalAlignment="Center"/>
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="• Preparation: 1-2 hours" FontSize="18" HorizontalAlignment="Center"/>
+                        <TextBlock Text="• Mixing &amp; Stuffing: 2-3 hours" FontSize="18" HorizontalAlignment="Center"/>
+                        <TextBlock Text="• Fermentation: 1-3 days" FontSize="18" HorizontalAlignment="Center"/>
+                        <TextBlock Text="• Drying/Aging: 3 weeks to 6+ months" FontSize="18" HorizontalAlignment="Center"/>
+                        <TextBlock Text="• Total Time: Minimum 1 month, up to 1+ year" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- Final Quote -->
+            <Border BorderBrush="{StaticResource SalamiRed}" 
+                   BorderThickness="3" 
+                   CornerRadius="8" 
+                   Padding="32">
+                <TextBlock Text="&quot;Patience is the secret ingredient in every great salami&quot;" 
+                          FontSize="24" 
+                          FontStyle="Italic"
+                          TextAlignment="Center"
+                          TextWrapping="Wrap"/>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

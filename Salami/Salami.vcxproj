@@ -52,6 +52,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Models.h" />
+    <ClInclude Include="SalamiDatabase.h" />
     <ClInclude Include="App.xaml.h">
       <DependentUpon>App.xaml</DependentUpon>
     </ClInclude>
@@ -72,6 +74,18 @@
     </ClInclude>
     <ClInclude Include="SettingsPage.xaml.h">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="ProductionPage.xaml.h">
+      <DependentUpon>ProductionPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="GamePage.xaml.h">
+      <DependentUpon>GamePage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="PairingPage.xaml.h">
+      <DependentUpon>PairingPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="FunFactsPage.xaml.h">
+      <DependentUpon>FunFactsPage.xaml</DependentUpon>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -96,11 +110,24 @@
     <Page Include="SettingsPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="ProductionPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GamePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PairingPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FunFactsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="SalamiDatabase.cpp" />
     <ClCompile Include="App.xaml.cpp">
       <DependentUpon>App.xaml</DependentUpon>
     </ClCompile>
@@ -121,6 +148,18 @@
     </ClCompile>
     <ClCompile Include="SettingsPage.xaml.cpp">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="ProductionPage.xaml.cpp">
+      <DependentUpon>ProductionPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="GamePage.xaml.cpp">
+      <DependentUpon>GamePage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="PairingPage.xaml.cpp">
+      <DependentUpon>PairingPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="FunFactsPage.xaml.cpp">
+      <DependentUpon>FunFactsPage.xaml</DependentUpon>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

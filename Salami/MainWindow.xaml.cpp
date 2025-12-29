@@ -8,6 +8,10 @@
 #include "HistoryPage.xaml.h"
 #include "RecipesPage.xaml.h"
 #include "SettingsPage.xaml.h"
+#include "ProductionPage.xaml.h"
+#include "GamePage.xaml.h"
+#include "PairingPage.xaml.h"
+#include "FunFactsPage.xaml.h"
 
 using namespace winrt;
 using namespace Microsoft::UI::Xaml;
@@ -67,6 +71,22 @@ namespace winrt::Salami::implementation
         else if (pageTag == L"Recipes")
         {
             ContentFrame().Navigate(xaml_typename<Salami::RecipesPage>());
+        }
+        else if (pageTag == L"Production")
+        {
+            ContentFrame().Navigate(xaml_typename<Salami::ProductionPage>());
+        }
+        else if (pageTag == L"Pairing")
+        {
+            ContentFrame().Navigate(xaml_typename<Salami::PairingPage>());
+        }
+        else if (pageTag == L"FunFacts")
+        {
+            ContentFrame().Navigate(xaml_typename<Salami::FunFactsPage>());
+        }
+        else if (pageTag == L"Game")
+        {
+            ContentFrame().Navigate(xaml_typename<Salami::GamePage>());
         }
     }
 }

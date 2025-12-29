@@ -24,6 +24,10 @@
                 <muxc:NavigationViewItem Content="Gallery" Tag="Gallery" Icon="Pictures"/>
                 <muxc:NavigationViewItem Content="History" Tag="History" Icon="Library"/>
                 <muxc:NavigationViewItem Content="Recipes" Tag="Recipes" Icon="Document"/>
+                <muxc:NavigationViewItem Content="Production" Tag="Production" Icon="Repair"/>
+                <muxc:NavigationViewItem Content="Pairing Guide" Tag="Pairing" Icon="ShopServer"/>
+                <muxc:NavigationViewItem Content="Fun Facts" Tag="FunFacts" Icon="Emoji2"/>
+                <muxc:NavigationViewItem Content="Game" Tag="Game" Icon="Game"/>
             </muxc:NavigationView.MenuItems>
 
             <Frame x:Name="ContentFrame" Padding="24"/>

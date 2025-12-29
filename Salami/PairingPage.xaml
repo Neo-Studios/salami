@@ -1,0 +1,606 @@
+<Page
+    x:Class="Salami.PairingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Salami"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer>
+        <StackPanel Spacing="24" Padding="24">
+            <!-- Header -->
+            <StackPanel Spacing="12">
+                <TextBlock Text="Salami Pairing Guide" 
+                          FontSize="42" 
+                          FontWeight="Bold"/>
+                <TextBlock Text="Perfect combinations of salami with cheese, wine, and more" 
+                          FontSize="18" 
+                          Opacity="0.8"/>
+            </StackPanel>
+
+            <!-- Introduction -->
+            <Border Background="{StaticResource SalamiRed}" 
+                   CornerRadius="12" 
+                   Padding="32">
+                <StackPanel Spacing="16">
+                    <TextBlock Text="The Art of Pairing" 
+                              FontSize="32" 
+                              FontWeight="Bold"
+                              Foreground="White"
+                              HorizontalAlignment="Center"/>
+                    <TextBlock Text="Salami pairing is about finding complementary flavors and textures. Whether you're planning a sophisticated wine tasting or a casual gathering, the right combinations elevate the experience." 
+                              FontSize="16"
+                              Foreground="{StaticResource SalamiPink}"
+                              TextAlignment="Center"
+                              TextWrapping="Wrap"
+                              HorizontalAlignment="Center"
+                              MaxWidth="700"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Pairing Principles -->
+            <StackPanel Spacing="16">
+                <Border Background="{StaticResource SalamiPink}" 
+                       CornerRadius="8" 
+                       Padding="20">
+                    <TextBlock Text="🎯 Pairing Principles" 
+                              FontSize="28" 
+                              FontWeight="Bold"
+                              Foreground="{StaticResource SalamiRed}"/>
+                </Border>
+                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Column="0" Grid.Row="0"
+                           Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                           CornerRadius="8" Padding="20" Margin="0,0,8,8">
+                        <StackPanel Spacing="12">
+                            <TextBlock Text="1. Match Intensity" FontSize="20" FontWeight="SemiBold"/>
+                            <TextBlock TextWrapping="Wrap" Opacity="0.8">
+                                Pair mild salamis with delicate cheeses and light wines. Bold, spicy 
+                                salamis deserve robust cheeses and full-bodied wines.
+                            </TextBlock>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Grid.Column="1" Grid.Row="0"
+                           Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                           CornerRadius="8" Padding="20" Margin="8,0,0,8">
+                        <StackPanel Spacing="12">
+                            <TextBlock Text="2. Complement or Contrast" FontSize="20" FontWeight="SemiBold"/>
+                            <TextBlock TextWrapping="Wrap" Opacity="0.8">
+                                Smoky chorizo pairs beautifully with creamy manchego (complement) or 
+                                sharp blue cheese (contrast). Both approaches work!
+                            </TextBlock>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Grid.Column="0" Grid.Row="1"
+                           Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                           CornerRadius="8" Padding="20" Margin="0,8,8,0">
+                        <StackPanel Spacing="12">
+                            <TextBlock Text="3. Regional Harmony" FontSize="20" FontWeight="SemiBold"/>
+                            <TextBlock TextWrapping="Wrap" Opacity="0.8">
+                                Italian salami with Italian cheese and wine creates natural synergy. 
+                                Regional products evolved together over centuries.
+                            </TextBlock>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Grid.Column="1" Grid.Row="1"
+                           Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                           CornerRadius="8" Padding="20" Margin="8,8,0,0">
+                        <StackPanel Spacing="12">
+                            <TextBlock Text="4. Temperature Matters" FontSize="20" FontWeight="SemiBold"/>
+                            <TextBlock TextWrapping="Wrap" Opacity="0.8">
+                                Serve salami and cheese at room temperature. Cold mutes flavors - 
+                                remove from refrigerator 30-60 minutes before serving.
+                            </TextBlock>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </StackPanel>
+
+            <!-- Cheese Pairings -->
+            <StackPanel Spacing="16">
+                <Border Background="{StaticResource SalamiRed}" 
+                       CornerRadius="8" 
+                       Padding="20">
+                    <TextBlock Text="🧀 Cheese Pairings" 
+                              FontSize="32" 
+                              FontWeight="Bold"
+                              Foreground="White"/>
+                </Border>
+
+                <!-- Soft Cheeses -->
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="16">
+                        <TextBlock Text="Soft &amp; Creamy Cheeses" 
+                                  FontSize="24" 
+                                  FontWeight="SemiBold"
+                                  Foreground="{StaticResource SalamiRed}"/>
+                        <StackPanel Spacing="8">
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Brie or Camembert</Bold> - Pairs with mild salamis like Milano. 
+                                The buttery texture balances the salami's richness.
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Fresh Mozzarella</Bold> - Excellent with spicy salami like 
+                                Calabrese. The cool, mild cheese tempers the heat.
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Goat Cheese (Chèvre)</Bold> - Tangy goat cheese complements 
+                                herb-forward salamis like Saucisson Sec.
+                            </TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <!-- Hard Cheeses -->
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="16">
+                        <TextBlock Text="Hard &amp; Aged Cheeses" 
+                                  FontSize="24" 
+                                  FontWeight="SemiBold"
+                                  Foreground="{StaticResource SalamiRed}"/>
+                        <StackPanel Spacing="8">
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Parmigiano-Reggiano</Bold> - The king of cheeses pairs with 
+                                Genoa or Felino salami. Crystal-studded aged Parmesan is magical.
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Pecorino Romano</Bold> - Salty, sheep's milk cheese loves 
+                                Soppressata. Both are bold and assertive.
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Manchego</Bold> - Spanish sheep's milk cheese is the natural 
+                                partner for Chorizo. Classic combination.
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Aged Gouda</Bold> - Caramel notes in aged Gouda complement 
+                                Hungarian salami's paprika sweetness.
+                            </TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <!-- Blue Cheeses -->
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="16">
+                        <TextBlock Text="Blue Cheeses" 
+                                  FontSize="24" 
+                                  FontWeight="SemiBold"
+                                  Foreground="{StaticResource SalamiRed}"/>
+                        <StackPanel Spacing="8">
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Gorgonzola</Bold> - Creamy Italian blue cheese creates 
+                                interesting contrast with Soppressata.
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Roquefort</Bold> - French blue cheese and Saucisson Sec make 
+                                a sophisticated pairing for wine enthusiasts.
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Stilton</Bold> - English blue cheese pairs surprisingly well 
+                                with Spanish Chorizo.
+                            </TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Wine Pairings -->
+            <StackPanel Spacing="16">
+                <Border Background="{StaticResource SalamiRed}" 
+                       CornerRadius="8" 
+                       Padding="20">
+                    <TextBlock Text="🍷 Wine Pairings" 
+                              FontSize="32" 
+                              FontWeight="Bold"
+                              Foreground="White"/>
+                </Border>
+
+                <!-- Red Wines -->
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="16">
+                        <TextBlock Text="Red Wines" 
+                                  FontSize="24" 
+                                  FontWeight="SemiBold"
+                                  Foreground="{StaticResource SalamiRed}"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <StackPanel Grid.Column="0" Spacing="12" Margin="0,0,12,0">
+                                <TextBlock FontSize="18" FontWeight="SemiBold">Light to Medium Reds</TextBlock>
+                                <StackPanel Spacing="6">
+                                    <TextBlock TextWrapping="Wrap">
+                                        <Bold>Chianti</Bold> - Italian classic with Genoa salami
+                                    </TextBlock>
+                                    <TextBlock TextWrapping="Wrap">
+                                        <Bold>Pinot Noir</Bold> - Versatile choice for mild salamis
+                                    </TextBlock>
+                                    <TextBlock TextWrapping="Wrap">
+                                        <Bold>Beaujolais</Bold> - Fruity and light with Saucisson Sec
+                                    </TextBlock>
+                                    <TextBlock TextWrapping="Wrap">
+                                        <Bold>Barbera</Bold> - High acid cuts through fat beautifully
+                                    </TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                            
+                            <StackPanel Grid.Column="1" Spacing="12" Margin="12,0,0,0">
+                                <TextBlock FontSize="18" FontWeight="SemiBold">Full-Bodied Reds</TextBlock>
+                                <StackPanel Spacing="6">
+                                    <TextBlock TextWrapping="Wrap">
+                                        <Bold>Rioja</Bold> - Spanish wine for Chorizo
+                                    </TextBlock>
+                                    <TextBlock TextWrapping="Wrap">
+                                        <Bold>Zinfandel</Bold> - Bold enough for Soppressata
+                                    </TextBlock>
+                                    <TextBlock TextWrapping="Wrap">
+                                        <Bold>Syrah/Shiraz</Bold> - Spicy wine loves spicy salami
+                                    </TextBlock>
+                                    <TextBlock TextWrapping="Wrap">
+                                        <Bold>Amarone</Bold> - Intense wine for aged salamis
+                                    </TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!-- White Wines -->
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="16">
+                        <TextBlock Text="White Wines" 
+                                  FontSize="24" 
+                                  FontWeight="SemiBold"
+                                  Foreground="{StaticResource SalamiRed}"/>
+                        <StackPanel Spacing="8">
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Pinot Grigio</Bold> - Light, crisp white cuts through fatty Milano salami
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Vermentino</Bold> - Italian white with herbal notes complements fennel in Finocchiona
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Albariño</Bold> - Spanish white with salinity pairs well with Chorizo
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Soave</Bold> - Delicate Italian white won't overpower mild salamis
+                            </TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <!-- Sparkling Wines -->
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="16">
+                        <TextBlock Text="Sparkling Wines" 
+                                  FontSize="24" 
+                                  FontWeight="SemiBold"
+                                  Foreground="{StaticResource SalamiRed}"/>
+                        <StackPanel Spacing="8">
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Prosecco</Bold> - Italian bubbles cleanse the palate between bites. 
+                                Perfect for antipasto spreads.
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Cava</Bold> - Spanish sparkler pairs excellently with Chorizo 
+                                and Manchego.
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Champagne</Bold> - Yes, really! The acidity and bubbles make 
+                                Champagne versatile with cured meats.
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Lambrusco</Bold> - Lightly sparkling red wine from Emilia-Romagna 
+                                is fantastic with Italian salami.
+                            </TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Beer Pairings -->
+            <StackPanel Spacing="16">
+                <Border Background="{StaticResource SalamiRed}" 
+                       CornerRadius="8" 
+                       Padding="20">
+                    <TextBlock Text="🍺 Beer Pairings" 
+                              FontSize="32" 
+                              FontWeight="Bold"
+                              Foreground="White"/>
+                </Border>
+
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="16">
+                        <TextBlock TextWrapping="Wrap" FontSize="16" Opacity="0.8">
+                            Beer is an underrated but excellent partner for salami. The carbonation 
+                            cleanses the palate, and the variety of beer styles offers endless pairing possibilities.
+                        </TextBlock>
+                        
+                        <StackPanel Spacing="10">
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Italian Pilsner</Bold> - Light, crisp lager perfect for Genoa or Milano salami
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Belgian Ale</Bold> - Complex, spicy Belgian beers match well with Soppressata
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>IPA</Bold> - Hoppy bitterness cuts through rich, fatty salami beautifully
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>German Lager</Bold> - Clean, crisp beer complements German sausages like Landjäger
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Stout or Porter</Bold> - Dark beers provide interesting contrast with spicy salamis
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Wheat Beer</Bold> - Light, refreshing, excellent for outdoor gatherings with salami
+                            </TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Bread & Crackers -->
+            <StackPanel Spacing="16">
+                <Border Background="{StaticResource SalamiRed}" 
+                       CornerRadius="8" 
+                       Padding="20">
+                    <TextBlock Text="🥖 Bread &amp; Crackers" 
+                              FontSize="32" 
+                              FontWeight="Bold"
+                              Foreground="White"/>
+                </Border>
+
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="16">
+                        <TextBlock Text="The Foundation" 
+                                  FontSize="20" 
+                                  FontWeight="SemiBold"
+                                  Foreground="{StaticResource SalamiRed}"/>
+                        <StackPanel Spacing="10">
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Ciabatta</Bold> - Italian bread with chewy crust and airy interior. 
+                                Toast lightly for sandwiches.
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Baguette</Bold> - French classic, slice thinly for charcuterie boards
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Sourdough</Bold> - Tangy bread adds another flavor dimension
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Focaccia</Bold> - Olive oil-rich bread from Liguria pairs with Genoa salami
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Water Crackers</Bold> - Neutral base lets salami shine
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Rosemary Crackers</Bold> - Herbal notes complement many salami varieties
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Grissini (Breadsticks)</Bold> - Traditional Italian accompaniment, fun to eat
+                            </TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Accompaniments -->
+            <StackPanel Spacing="16">
+                <Border Background="{StaticResource SalamiRed}" 
+                       CornerRadius="8" 
+                       Padding="20">
+                    <TextBlock Text="🍯 Accompaniments &amp; Condiments" 
+                              FontSize="32" 
+                              FontWeight="Bold"
+                              Foreground="White"/>
+                </Border>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Sweet -->
+                    <Border Grid.Column="0"
+                           Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                           CornerRadius="8" Padding="24" Margin="0,0,8,0">
+                        <StackPanel Spacing="12">
+                            <TextBlock Text="Sweet Accompaniments" 
+                                      FontSize="20" 
+                                      FontWeight="SemiBold"
+                                      Foreground="{StaticResource SalamiRed}"/>
+                            <StackPanel Spacing="8">
+                                <TextBlock TextWrapping="Wrap">• Fresh figs - sweet contrast to salty salami</TextBlock>
+                                <TextBlock TextWrapping="Wrap">• Grapes - classic pairing, refreshing</TextBlock>
+                                <TextBlock TextWrapping="Wrap">• Honey - drizzle on cheese alongside salami</TextBlock>
+                                <TextBlock TextWrapping="Wrap">• Fig jam - intense sweetness balances spice</TextBlock>
+                                <TextBlock TextWrapping="Wrap">• Quince paste - Spanish tradition with chorizo</TextBlock>
+                                <TextBlock TextWrapping="Wrap">• Dried apricots - chewy texture, tangy-sweet</TextBlock>
+                                <TextBlock TextWrapping="Wrap">• Dates - rich sweetness with aged salami</TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Savory -->
+                    <Border Grid.Column="1"
+                           Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                           CornerRadius="8" Padding="24" Margin="8,0,0,0">
+                        <StackPanel Spacing="12">
+                            <TextBlock Text="Savory Accompaniments" 
+                                      FontSize="20" 
+                                      FontWeight="SemiBold"
+                                      Foreground="{StaticResource SalamiRed}"/>
+                            <StackPanel Spacing="8">
+                                <TextBlock TextWrapping="Wrap">• Olives - Mediterranean classic</TextBlock>
+                                <TextBlock TextWrapping="Wrap">• Cornichons - tiny pickles, French tradition</TextBlock>
+                                <TextBlock TextWrapping="Wrap">• Marinated artichokes - tangy, tender</TextBlock>
+                                <TextBlock TextWrapping="Wrap">• Roasted peppers - sweet and smoky</TextBlock>
+                                <TextBlock TextWrapping="Wrap">• Marcona almonds - Spanish, buttery nuts</TextBlock>
+                                <TextBlock TextWrapping="Wrap">• Mustard - whole grain or Dijon</TextBlock>
+                                <TextBlock TextWrapping="Wrap">• Sun-dried tomatoes - concentrated flavor</TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </StackPanel>
+
+            <!-- Complete Pairing Examples -->
+            <StackPanel Spacing="16">
+                <Border Background="{StaticResource SalamiPink}" 
+                       CornerRadius="8" 
+                       Padding="20">
+                    <TextBlock Text="🎨 Complete Pairing Examples" 
+                              FontSize="32" 
+                              FontWeight="Bold"
+                              Foreground="{StaticResource SalamiRed}"/>
+                </Border>
+
+                <!-- Italian Board -->
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="16">
+                        <TextBlock Text="Classic Italian Board" 
+                                  FontSize="24" 
+                                  FontWeight="SemiBold"
+                                  Foreground="{StaticResource SalamiRed}"/>
+                        <StackPanel Spacing="8">
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Salamis:</Bold> Genoa, Soppressata, Felino
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Cheeses:</Bold> Parmigiano-Reggiano, Pecorino Romano, Fresh Mozzarella
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Wine:</Bold> Chianti Classico or Barolo
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Bread:</Bold> Ciabatta, toasted
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Accompaniments:</Bold> Mixed olives, roasted red peppers, fresh figs, honey
+                            </TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <!-- Spanish Board -->
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="16">
+                        <TextBlock Text="Spanish Tapas Board" 
+                                  FontSize="24" 
+                                  FontWeight="SemiBold"
+                                  Foreground="{StaticResource SalamiRed}"/>
+                        <StackPanel Spacing="8">
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Salamis:</Bold> Chorizo, Salchichón, Lomo Embuchado
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Cheeses:</Bold> Manchego (aged), Mahón, Idiazábal
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Wine:</Bold> Rioja Reserva or Albariño
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Bread:</Bold> Crusty baguette, pan con tomate
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Accompaniments:</Bold> Marcona almonds, quince paste, olives, pepperoncini
+                            </TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <!-- Casual Board -->
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="16">
+                        <TextBlock Text="Casual Gathering Board" 
+                                  FontSize="24" 
+                                  FontWeight="SemiBold"
+                                  Foreground="{StaticResource SalamiRed}"/>
+                        <StackPanel Spacing="8">
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Salamis:</Bold> Milano, Genoa, Cacciatore
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Cheeses:</Bold> Cheddar, Gouda, Mozzarella
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Beverage:</Bold> IPA beer or Pinot Grigio
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Bread:</Bold> Assorted crackers, pretzel crisps
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16">
+                                <Bold>Accompaniments:</Bold> Grapes, cherry tomatoes, pickles, whole grain mustard
+                            </TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Final Tips -->
+            <Border Background="{StaticResource SalamiRed}" 
+                   CornerRadius="12" 
+                   Padding="32">
+                <StackPanel Spacing="16">
+                    <TextBlock Text="💡 Pro Tips for Perfect Pairings" 
+                              FontSize="28" 
+                              FontWeight="Bold"
+                              Foreground="White"
+                              HorizontalAlignment="Center"/>
+                    <StackPanel Spacing="10">
+                        <TextBlock TextWrapping="Wrap" Foreground="White" FontSize="16">
+                            • Always serve salami and cheese at room temperature (60-70°F)
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" Foreground="White" FontSize="16">
+                            • Use odd numbers when selecting varieties (3, 5, or 7 items)
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" Foreground="White" FontSize="16">
+                            • Vary textures: soft, semi-soft, and hard cheeses
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" Foreground="White" FontSize="16">
+                            • Include both sweet and savory accompaniments
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" Foreground="White" FontSize="16">
+                            • Slice salami thinly - it releases more aroma and flavor
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" Foreground="White" FontSize="16">
+                            • Label cheeses and salamis for guests unfamiliar with varieties
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" Foreground="White" FontSize="16">
+                            • Provide small plates, napkins, and separate knives for each cheese
+                        </TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
