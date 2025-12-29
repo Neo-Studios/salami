@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  
+  <!-- Product Definition -->
+  <Product Id="*" 
+           Name="Salami - The Ultimate Salami Appreciation App" 
+           Language="1033" 
+           Version="1.0.0.0" 
+           Manufacturer="Neo Studios" 
+           UpgradeCode="12345678-1234-1234-1234-123456789012">
+    
+    <Package InstallerVersion="500" 
+             Compressed="yes" 
+             InstallScope="perMachine" 
+             Description="Comprehensive salami encyclopedia, games, and productivity suite"
+             Comments="Just salami. No facts, no food delivery. Pure salami appreciation."
+             Manufacturer="Neo Studios"/>
+
+    <!-- Media -->
+    <Media Id="1" Cabinet="Salami.cab" EmbedCab="yes" />
+
+    <!-- Upgrade Logic -->
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." 
+                  AllowSameVersionUpgrades="yes"/>
+
+    <!-- Installation Directory Structure -->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFiles64Folder">
+        <Directory Id="MANUFACTURERFOLDER" Name="NeoStudios">
+          <Directory Id="INSTALLFOLDER" Name="Salami">
+            
+            <!-- Main Application Files -->
+            <Component Id="MainExecutable" Guid="11111111-1111-1111-1111-111111111111">
+              <File Id="SalamiExe" 
+                    Name="Salami.exe" 
+                    Source="$(var.SourceDir)\Salami.exe" 
+                    KeyPath="yes">
+                <Shortcut Id="StartMenuShortcut"
+                         Directory="ProgramMenuFolder"
+                         Name="Salami App"
+                         Description="The ultimate salami appreciation application"
+                         WorkingDirectory="INSTALLFOLDER"
+                         Icon="SalamiIcon.exe"
+                         IconIndex="0"
+                         Advertise="yes" />
+                <Shortcut Id="DesktopShortcut"
+                         Directory="DesktopFolder"
+                         Name="Salami"
+                         Description="Salami App"
+                         WorkingDirectory="INSTALLFOLDER"
+                         Icon="SalamiIcon.exe"
+                         IconIndex="0"
+                         Advertise="yes" />
+              </File>
+            </Component>
+
+            <!-- Application DLLs and Dependencies -->
+            <Component Id="AppDependencies" Guid="22222222-2222-2222-2222-222222222222">
+              <File Id="MicrosoftUIXaml" 
+                    Name="Microsoft.UI.Xaml.dll" 
+                    Source="$(var.SourceDir)\Microsoft.UI.Xaml.dll" 
+                    KeyPath="yes"/>
+              <File Id="WindowsAppSDK" 
+                    Name="Microsoft.WindowsAppSDK.dll" 
+                    Source="$(var.SourceDir)\Microsoft.WindowsAppSDK.dll"/>
+              <File Id="VCRuntime" 
+                    Name="vcruntime140.dll" 
+                    Source="$(var.SourceDir)\vcruntime140.dll"/>
+              <File Id="MSVCRuntime" 
+                    Name="msvcp140.dll" 
+                    Source="$(var.SourceDir)\msvcp140.dll"/>
+            </Component>
+
+            <!-- Application Resources -->
+            <Directory Id="RESOURCESFOLDER" Name="Resources">
+              <Component Id="AppResources" Guid="33333333-3333-3333-3333-333333333333">
+                <File Id="AppIcon" 
+                      Name="salami_icon.png" 
+                      Source="$(var.SourceDir)\Resources\salami_icon.png" 
+                      KeyPath="yes"/>
+                <File Id="LogoImage" 
+                      Name="salami_logo.png" 
+                      Source="$(var.SourceDir)\Resources\salami_logo.png"/>
+                <File Id="BackgroundImage" 
+                      Name="salami_background.jpg" 
+                      Source="$(var.SourceDir)\Resources\salami_background.jpg"/>
+              </Component>
+            </Directory>
+
+            <!-- Data Files -->
+            <Directory Id="DATAFOLDER" Name="Data">
+              <Component Id="AppData" Guid="44444444-4444-4444-4444-444444444444">
+                <File Id="SalamiDatabase" 
+                      Name="salami_data.db" 
+                      Source="$(var.SourceDir)\Data\salami_data.db" 
+                      KeyPath="yes"/>
+                <File Id="RecipesData" 
+                      Name="recipes.json" 
+                      Source="$(var.SourceDir)\Data\recipes.json"/>
+                <File Id="HistoryData" 
+                      Name="history.json" 
+                      Source="$(var.SourceDir)\Data\history.json"/>
+              </Component>
+            </Directory>
+
+            <!-- Game Assets -->
+            <Directory Id="GAMESFOLDER" Name="Games">
+              <Component Id="GameAssets" Guid="55555555-5555-5555-5555-555555555555">
+                <File Id="GameLevel1" 
+                      Name="level1.dat" 
+                      Source="$(var.SourceDir)\Games\level1.dat" 
+                      KeyPath="yes"/>
+                <File Id="GameLevel2" 
+                      Name="level2.dat" 
+                      Source="$(var.SourceDir)\Games\level2.dat"/>
+                <File Id="GameLevel3" 
+                      Name="level3.dat" 
+                      Source="$(var.SourceDir)\Games\level3.dat"/>
+                <File Id="GameLevel4" 
+                      Name="level4.dat" 
+                      Source="$(var.SourceDir)\Games\level4.dat"/>
+                <File Id="GameLevel5" 
+                      Name="level5.dat" 
+                      Source="$(var.SourceDir)\Games\level5.dat"/>
+                <File Id="GameSprites" 
+                      Name="sprites.png" 
+                      Source="$(var.SourceDir)\Games\sprites.png"/>
+                <File Id="GameSounds" 
+                      Name="sounds.wav" 
+                      Source="$(var.SourceDir)\Games\sounds.wav"/>
+              </Component>
+            </Directory>
+
+            <!-- Documentation -->
+            <Directory Id="DOCSFOLDER" Name="Documentation">
+              <Component Id="Documentation" Guid="66666666-6666-6666-6666-666666666666">
+                <File Id="ReadmeFile" 
+                      Name="README.md" 
+                      Source="$(var.SourceDir)\Documentation\README.md" 
+                      KeyPath="yes"/>
+                <File Id="LicenseFile" 
+                      Name="LICENSE.txt" 
+                      Source="$(var.SourceDir)\Documentation\LICENSE.txt"/>
+                <File Id="UserGuide" 
+                      Name="UserGuide.pdf" 
+                      Source="$(var.SourceDir)\Documentation\UserGuide.pdf"/>
+                <File Id="QuickStart" 
+                      Name="QuickStart.pdf" 
+                      Source="$(var.SourceDir)\Documentation\QuickStart.pdf"/>
+              </Component>
+            </Directory>
+
+          </Directory>
+        </Directory>
+      </Directory>
+
+      <!-- Desktop Folder for Shortcut -->
+      <Directory Id="DesktopFolder" Name="Desktop"/>
+
+      <!-- Start Menu Folder -->
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="Salami">
+          <Component Id="StartMenuShortcuts" Guid="77777777-7777-7777-7777-777777777777">
+            <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+            <RegistryValue Root="HKCU" 
+                          Key="Software\NeoStudios\Salami" 
+                          Name="installed" 
+                          Type="integer" 
+                          Value="1" 
+                          KeyPath="yes"/>
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <!-- Features -->
+    <Feature Id="MainApplication" 
+             Title="Salami Application" 
+             Description="Main application files and core features" 
+             Level="1" 
+             ConfigurableDirectory="INSTALLFOLDER"
+             AllowAdvertise="yes"
+             Display="expand">
+      <ComponentRef Id="MainExecutable"/>
+      <ComponentRef Id="AppDependencies"/>
+      <ComponentRef Id="AppResources"/>
+      <ComponentRef Id="StartMenuShortcuts"/>
+      
+      <Feature Id="GameFeature" 
+               Title="Game Module" 
+               Description="Salami Adventure 3D game with 5 levels and boss battles" 
+               Level="1">
+        <ComponentRef Id="GameAssets"/>
+      </Feature>
+
+      <Feature Id="DataFeature" 
+               Title="Salami Database" 
+               Description="Comprehensive database of salami varieties, recipes, and history" 
+               Level="1">
+        <ComponentRef Id="AppData"/>
+      </Feature>
+
+      <Feature Id="DocumentationFeature" 
+               Title="Documentation" 
+               Description="User guides, quick start guide, and help files" 
+               Level="1">
+        <ComponentRef Id="Documentation"/>
+      </Feature>
+    </Feature>
+
+    <!-- UI Configuration -->
+    <UIRef Id="WixUI_FeatureTree"/>
+    <UIRef Id="WixUI_ErrorProgressText"/>
+
+    <!-- Custom UI Dialogs -->
+    <UI>
+      <Dialog Id="WelcomeDlg" Width="370" Height="270" Title="[ProductName] Setup">
+        <Control Id="Title" Type="Text" X="135" Y="20" Width="220" Height="60" Transparent="yes" NoPrefix="yes">
+          <Text>{\WixUI_Font_Bigger}Welcome to the Salami Application Installer!</Text>
+        </Control>
+        <Control Id="Description" Type="Text" X="135" Y="70" Width="220" Height="80" Transparent="yes" NoPrefix="yes">
+          <Text>This wizard will guide you through the installation of the ultimate salami appreciation application, featuring:
+
+• Comprehensive salami encyclopedia with 20+ varieties
+• Interactive 3D adventure game with 5 levels
+• Productivity suite with calendar, notes, and more
+• Word processor, spreadsheet, and presentation tools
+
+Click Next to continue or Cancel to exit.</Text>
+        </Control>
+        <Control Id="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Default="yes" Text="Next">
+          <Publish Event="NewDialog" Value="LicenseAgreementDlg">1</Publish>
+        </Control>
+        <Control Id="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Cancel="yes" Text="Cancel">
+          <Publish Event="SpawnDialog" Value="CancelDlg">1</Publish>
+        </Control>
+      </Dialog>
+
+      <Dialog Id="LicenseAgreementDlg" Width="370" Height="270" Title="[ProductName] Setup">
+        <Control Id="LicenseText" Type="ScrollableText" X="20" Y="60" Width="330" Height="140" Sunken="yes" TabSkip="no">
+          <Text SourceFile="$(var.SourceDir)\LICENSE.rtf"/>
+        </Control>
+        <Control Id="LicenseAccepted" Type="RadioButtonGroup" X="20" Y="207" Width="330" Height="40" Property="LicenseAccepted">
+          <RadioButtonGroup Property="LicenseAccepted">
+            <RadioButton Text="I accept the terms in the License Agreement" Value="1" X="0" Y="0" Width="300" Height="17"/>
+            <RadioButton Text="I do not accept the terms in the License Agreement" Value="0" X="0" Y="20" Width="300" Height="17"/>
+          </RadioButtonGroup>
+        </Control>
+        <Control Id="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Text="Back">
+          <Publish Event="NewDialog" Value="WelcomeDlg">1</Publish>
+        </Control>
+        <Control Id="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Default="yes" Text="Next">
+          <Publish Event="NewDialog" Value="CustomizeDlg">LicenseAccepted = "1"</Publish>
+          <Condition Action="disable"><![CDATA[LicenseAccepted <> "1"]]></Condition>
+          <Condition Action="enable"><![CDATA[LicenseAccepted = "1"]]></Condition>
+        </Control>
+        <Control Id="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Cancel="yes" Text="Cancel">
+          <Publish Event="SpawnDialog" Value="CancelDlg">1</Publish>
+        </Control>
+      </Dialog>
+    </UI>
+
+    <!-- Properties -->
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER"/>
+    <Property Id="ARPPRODUCTICON" Value="SalamiIcon.exe"/>
+    <Property Id="ARPURLINFOABOUT" Value="https://github.com/Neo-Studios/salami"/>
+    <Property Id="ARPURLUPDATEINFO" Value="https://github.com/Neo-Studios/salami/releases"/>
+    <Property Id="ARPHELPLINK" Value="https://github.com/Neo-Studios/salami/wiki"/>
+    <Property Id="ARPCOMMENTS" Value="The ultimate salami appreciation application"/>
+    
+    <!-- Application Icon -->
+    <Icon Id="SalamiIcon.exe" SourceFile="$(var.SourceDir)\salami_icon.ico"/>
+
+    <!-- Registry Keys for Application -->
+    <Component Id="RegistryEntries" Guid="88888888-8888-8888-8888-888888888888" Directory="INSTALLFOLDER">
+      <RegistryKey Root="HKLM" Key="Software\NeoStudios\Salami">
+        <RegistryValue Type="string" Name="InstallLocation" Value="[INSTALLFOLDER]" KeyPath="yes"/>
+        <RegistryValue Type="string" Name="Version" Value="1.0.0.0"/>
+        <RegistryValue Type="integer" Name="Installed" Value="1"/>
+      </RegistryKey>
+      
+      <!-- File Associations -->
+      <RegistryKey Root="HKCR" Key=".salami">
+        <RegistryValue Type="string" Value="SalamiApp.Document"/>
+      </RegistryKey>
+      <RegistryKey Root="HKCR" Key="SalamiApp.Document">
+        <RegistryValue Type="string" Value="Salami Document"/>
+        <RegistryKey Key="DefaultIcon">
+          <RegistryValue Type="string" Value="[INSTALLFOLDER]Salami.exe,0"/>
+        </RegistryKey>
+        <RegistryKey Key="shell\open\command">
+          <RegistryValue Type="string" Value='"[INSTALLFOLDER]Salami.exe" "%1"'/>
+        </RegistryKey>
+      </RegistryKey>
+    </Component>
+
+    <!-- Custom Actions -->
+    <CustomAction Id="LaunchApplication"
+                  FileKey="SalamiExe"
+                  ExeCommand=""
+                  Execute="immediate"
+                  Impersonate="yes"
+                  Return="asyncNoWait"/>
+
+    <InstallExecuteSequence>
+      <Custom Action="LaunchApplication" After="InstallFinalize">NOT Installed AND NOT REMOVE</Custom>
+    </InstallExecuteSequence>
+
+    <!-- Conditions -->
+    <Condition Message="This application requires Windows 10 version 1809 or later.">
+      <![CDATA[Installed OR (VersionNT >= 603)]]>
+    </Condition>
+
+    <Condition Message="This application requires administrator privileges to install.">
+      <![CDATA[Privileged]]>
+    </Condition>
+
+  </Product>
+</Wix>
