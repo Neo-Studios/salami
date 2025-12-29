@@ -28,6 +28,13 @@
                 <muxc:NavigationViewItem Content="Pairing Guide" Tag="Pairing" Icon="ShopServer"/>
                 <muxc:NavigationViewItem Content="Fun Facts" Tag="FunFacts" Icon="Emoji2"/>
                 <muxc:NavigationViewItem Content="Game" Tag="Game" Icon="Game"/>
+                <muxc:NavigationViewItemSeparator/>
+                <muxc:NavigationViewItemHeader Content="🥓 Productivity Suite"/>
+                <muxc:NavigationViewItem Content="Calendar" Tag="Calendar" Icon="Calendar"/>
+                <muxc:NavigationViewItem Content="Notes" Tag="Notes" Icon="Memo"/>
+                <muxc:NavigationViewItem Content="SalamiWrite" Tag="WordProcessor" Icon="Edit"/>
+                <muxc:NavigationViewItem Content="SalamiCalc" Tag="Spreadsheet" Icon="Calculator"/>
+                <muxc:NavigationViewItem Content="SalamiSlides" Tag="Presentation" Icon="SlideShow"/>
             </muxc:NavigationView.MenuItems>
 
             <Frame x:Name="ContentFrame" Padding="24"/>

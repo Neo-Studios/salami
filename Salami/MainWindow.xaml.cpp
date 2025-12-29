@@ -12,6 +12,11 @@
 #include "GamePage.xaml.h"
 #include "PairingPage.xaml.h"
 #include "FunFactsPage.xaml.h"
+#include "CalendarPage.xaml.h"
+#include "NotesPage.xaml.h"
+#include "WordProcessorPage.xaml.h"
+#include "SpreadsheetPage.xaml.h"
+#include "PresentationPage.xaml.h"
 
 using namespace winrt;
 using namespace Microsoft::UI::Xaml;
@@ -87,6 +92,26 @@ namespace winrt::Salami::implementation
         else if (pageTag == L"Game")
         {
             ContentFrame().Navigate(xaml_typename<Salami::GamePage>());
+        }
+        else if (pageTag == L"Calendar")
+        {
+            ContentFrame().Navigate(xaml_typename<Salami::CalendarPage>());
+        }
+        else if (pageTag == L"Notes")
+        {
+            ContentFrame().Navigate(xaml_typename<Salami::NotesPage>());
+        }
+        else if (pageTag == L"WordProcessor")
+        {
+            ContentFrame().Navigate(xaml_typename<Salami::WordProcessorPage>());
+        }
+        else if (pageTag == L"Spreadsheet")
+        {
+            ContentFrame().Navigate(xaml_typename<Salami::SpreadsheetPage>());
+        }
+        else if (pageTag == L"Presentation")
+        {
+            ContentFrame().Navigate(xaml_typename<Salami::PresentationPage>());
         }
     }
 }
