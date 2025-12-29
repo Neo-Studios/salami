@@ -1,0 +1,72 @@
+#include "pch.h"
+#include "MainWindow.xaml.h"
+#if __has_include("MainWindow.g.cpp")
+#include "MainWindow.g.cpp"
+#endif
+#include "HomePage.xaml.h"
+#include "GalleryPage.xaml.h"
+#include "HistoryPage.xaml.h"
+#include "RecipesPage.xaml.h"
+#include "SettingsPage.xaml.h"
+
+using namespace winrt;
+using namespace Microsoft::UI::Xaml;
+using namespace Microsoft::UI::Xaml::Controls;
+
+namespace winrt::Salami::implementation
+{
+    MainWindow::MainWindow()
+    {
+        InitializeComponent();
+        Title(L"Salami - A Celebration of Excellence");
+        
+        // Navigate to home page by default
+        ContentFrame().Navigate(xaml_typename<Salami::HomePage>());
+    }
+
+    void MainWindow::NavView_SelectionChanged(
+        NavigationView const& sender,
+        NavigationViewSelectionChangedEventArgs const& args)
+    {
+        if (args.IsSettingsSelected())
+        {
+            ContentFrame().Navigate(xaml_typename<Salami::SettingsPage>());
+        }
+        else if (args.SelectedItem())
+        {
+            auto selectedItem = args.SelectedItem().as<NavigationViewItem>();
+            auto tag = unbox_value<hstring>(selectedItem.Tag());
+            NavigateToPage(tag);
+        }
+    }
+
+    void MainWindow::NavView_ItemInvoked(
+        NavigationView const&,
+        NavigationViewItemInvokedEventArgs const& args)
+    {
+        if (args.IsSettingsInvoked())
+        {
+            ContentFrame().Navigate(xaml_typename<Salami::SettingsPage>());
+        }
+    }
+
+    void MainWindow::NavigateToPage(hstring const& pageTag)
+    {
+        if (pageTag == L"Home")
+        {
+            ContentFrame().Navigate(xaml_typename<Salami::HomePage>());
+        }
+        else if (pageTag == L"Gallery")
+        {
+            ContentFrame().Navigate(xaml_typename<Salami::GalleryPage>());
+        }
+        else if (pageTag == L"History")
+        {
+            ContentFrame().Navigate(xaml_typename<Salami::HistoryPage>());
+        }
+        else if (pageTag == L"Recipes")
+        {
+            ContentFrame().Navigate(xaml_typename<Salami::RecipesPage>());
+        }
+    }
+}

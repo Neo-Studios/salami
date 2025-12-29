@@ -1,0 +1,195 @@
+<Page
+    x:Class="Salami.HistoryPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Salami"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer>
+        <StackPanel Spacing="24" Padding="24">
+            <!-- Header -->
+            <StackPanel Spacing="12">
+                <TextBlock Text="History of Salami" 
+                          FontSize="42" 
+                          FontWeight="Bold"/>
+                <TextBlock Text="A journey through centuries of meat curing excellence" 
+                          FontSize="18" 
+                          Opacity="0.8"/>
+            </StackPanel>
+
+            <!-- Ancient Origins -->
+            <StackPanel Spacing="16">
+                <Border Background="{StaticResource SalamiRed}" 
+                       CornerRadius="8" 
+                       Padding="20">
+                    <TextBlock Text="Ancient Origins" 
+                              FontSize="32" 
+                              FontWeight="Bold"
+                              Foreground="White"/>
+                </Border>
+                
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="12">
+                        <TextBlock FontSize="18" TextWrapping="Wrap">
+                            Salami has roots stretching back to ancient times. The practice of preserving 
+                            meat through curing, drying, and fermentation was essential for survival before 
+                            refrigeration. Ancient Roman and Greek texts mention cured sausages, and the 
+                            word "salami" itself derives from the Italian "salare," meaning "to salt."
+                        </TextBlock>
+                        <TextBlock FontSize="18" TextWrapping="Wrap" Opacity="0.8">
+                            The earliest forms of salami were likely created by Mediterranean peoples who 
+                            needed to preserve meat during long journeys and harsh winters.
+                        </TextBlock>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Medieval Era -->
+            <StackPanel Spacing="16">
+                <Border Background="{StaticResource SalamiRed}" 
+                       CornerRadius="8" 
+                       Padding="20">
+                    <TextBlock Text="Medieval Era (500-1500 AD)" 
+                              FontSize="32" 
+                              FontWeight="Bold"
+                              Foreground="White"/>
+                </Border>
+                
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="12">
+                        <TextBlock FontSize="18" TextWrapping="Wrap">
+                            During the Middle Ages, salami production became more refined throughout 
+                            Southern Europe, particularly in Italy. Each region developed its own unique 
+                            recipes, spice blends, and curing techniques that are still celebrated today.
+                        </TextBlock>
+                        <TextBlock FontSize="18" TextWrapping="Wrap" Opacity="0.8">
+                            Monasteries and wealthy estates perfected the art of salami making, with monks 
+                            documenting recipes and techniques. These became closely guarded secrets passed 
+                            down through generations of butchers and sausage makers.
+                        </TextBlock>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Renaissance & Modern Era -->
+            <StackPanel Spacing="16">
+                <Border Background="{StaticResource SalamiRed}" 
+                       CornerRadius="8" 
+                       Padding="20">
+                    <TextBlock Text="Renaissance to Modern Era" 
+                              FontSize="32" 
+                              FontWeight="Bold"
+                              Foreground="White"/>
+                </Border>
+                
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="12">
+                        <TextBlock FontSize="18" TextWrapping="Wrap">
+                            By the Renaissance period, Italian salami makers had achieved master status. 
+                            Cities like Genoa, Milan, and Naples became famous for their distinctive styles. 
+                            Trade routes spread these delicacies across Europe and eventually to the New World.
+                        </TextBlock>
+                        <TextBlock FontSize="18" TextWrapping="Wrap" Opacity="0.8">
+                            The 19th and 20th centuries saw Italian immigrants bringing their salami-making 
+                            traditions to America, Australia, and other parts of the world, where they 
+                            adapted recipes to local tastes while maintaining traditional methods.
+                        </TextBlock>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Traditional Methods -->
+            <StackPanel Spacing="16">
+                <Border Background="{StaticResource SalamiPink}" 
+                       CornerRadius="8" 
+                       Padding="20">
+                    <TextBlock Text="Traditional Curing Methods" 
+                              FontSize="32" 
+                              FontWeight="Bold"
+                              Foreground="{StaticResource SalamiRed}"/>
+                </Border>
+                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0"
+                           Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                           CornerRadius="8" Padding="20" Margin="0,0,8,0">
+                        <StackPanel Spacing="12">
+                            <TextBlock Text="Fermentation" FontSize="24" FontWeight="SemiBold"/>
+                            <TextBlock TextWrapping="Wrap" Opacity="0.8">
+                                Natural bacteria convert sugars into lactic acid, lowering pH and 
+                                preventing harmful bacteria growth while developing complex flavors.
+                            </TextBlock>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Grid.Column="1"
+                           Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                           CornerRadius="8" Padding="20" Margin="8,0,0,0">
+                        <StackPanel Spacing="12">
+                            <TextBlock Text="Air-Drying" FontSize="24" FontWeight="SemiBold"/>
+                            <TextBlock TextWrapping="Wrap" Opacity="0.8">
+                                Salamis are hung in temperature and humidity-controlled rooms for 
+                                weeks or months, allowing moisture to evaporate and flavors to intensify.
+                            </TextBlock>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </StackPanel>
+
+            <!-- Cultural Impact -->
+            <StackPanel Spacing="16">
+                <Border Background="{StaticResource SalamiRed}" 
+                       CornerRadius="8" 
+                       Padding="20">
+                    <TextBlock Text="Cultural Significance" 
+                              FontSize="32" 
+                              FontWeight="Bold"
+                              Foreground="White"/>
+                </Border>
+                
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="16">
+                        <TextBlock FontSize="18" TextWrapping="Wrap">
+                            Salami is more than just food—it's a cultural icon. In Italy, each region 
+                            takes pride in its local salami varieties, often protected by PDO 
+                            (Protected Designation of Origin) status.
+                        </TextBlock>
+                        <StackPanel Spacing="8">
+                            <TextBlock Text="• Celebrated in annual festivals across Europe" FontSize="16"/>
+                            <TextBlock Text="• Central to charcuterie traditions" FontSize="16"/>
+                            <TextBlock Text="• Symbol of artisanal craftsmanship" FontSize="16"/>
+                            <TextBlock Text="• Brings families together at meals" FontSize="16"/>
+                            <TextBlock Text="• Represents regional pride and identity" FontSize="16"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Quote -->
+            <Border BorderBrush="{StaticResource SalamiRed}" 
+                   BorderThickness="3" 
+                   CornerRadius="8" 
+                   Padding="32">
+                <StackPanel Spacing="12" HorizontalAlignment="Center">
+                    <TextBlock Text="&quot;In every slice of salami lies centuries of tradition, skill, and passion&quot;" 
+                              FontSize="24" 
+                              FontStyle="Italic"
+                              TextAlignment="Center"
+                              TextWrapping="Wrap"
+                              MaxWidth="600"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

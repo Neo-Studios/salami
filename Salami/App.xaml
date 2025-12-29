@@ -1,0 +1,19 @@
+<Application
+    x:Class="Salami.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Salami">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+            </ResourceDictionary.MergedDictionaries>
+            
+            <!-- Salami-themed colors -->
+            <SolidColorBrush x:Key="SalamiRed" Color="#8B0000"/>
+            <SolidColorBrush x:Key="SalamiPink" Color="#FFB6C1"/>
+            <SolidColorBrush x:Key="SalamiWhite" Color="#FFF5EE"/>
+            <SolidColorBrush x:Key="SalamiBrown" Color="#8B4513"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

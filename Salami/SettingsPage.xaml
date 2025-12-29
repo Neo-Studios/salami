@@ -1,0 +1,229 @@
+<Page
+    x:Class="Salami.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Salami"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer>
+        <StackPanel Spacing="24" Padding="24">
+            <!-- Header -->
+            <StackPanel Spacing="12">
+                <TextBlock Text="Settings" 
+                          FontSize="42" 
+                          FontWeight="Bold"/>
+                <TextBlock Text="Customize your salami appreciation experience" 
+                          FontSize="18" 
+                          Opacity="0.8"/>
+            </StackPanel>
+
+            <!-- Appearance Settings -->
+            <StackPanel Spacing="16">
+                <Border Background="{StaticResource SalamiRed}" 
+                       CornerRadius="8" 
+                       Padding="20">
+                    <TextBlock Text="🎨 Appearance" 
+                              FontSize="28" 
+                              FontWeight="Bold"
+                              Foreground="White"/>
+                </Border>
+                
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="20">
+                        <StackPanel Spacing="8">
+                            <TextBlock Text="Theme" FontSize="18" FontWeight="SemiBold"/>
+                            <RadioButtons>
+                                <RadioButton Content="Light (Classic Salami)" IsChecked="True"/>
+                                <RadioButton Content="Dark (Smoked Salami)"/>
+                                <RadioButton Content="Use system setting"/>
+                            </RadioButtons>
+                        </StackPanel>
+
+                        <StackPanel Spacing="8">
+                            <TextBlock Text="Color Accent" FontSize="18" FontWeight="SemiBold"/>
+                            <ComboBox PlaceholderText="Select color" SelectedIndex="0" Width="250">
+                                <ComboBoxItem Content="Salami Red (Default)"/>
+                                <ComboBoxItem Content="Prosciutto Pink"/>
+                                <ComboBoxItem Content="Chorizo Orange"/>
+                                <ComboBoxItem Content="Soppressata Burgundy"/>
+                            </ComboBox>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Display Preferences -->
+            <StackPanel Spacing="16">
+                <Border Background="{StaticResource SalamiRed}" 
+                       CornerRadius="8" 
+                       Padding="20">
+                    <TextBlock Text="📺 Display Preferences" 
+                              FontSize="28" 
+                              FontWeight="Bold"
+                              Foreground="White"/>
+                </Border>
+                
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="20">
+                        <ToggleSwitch Header="Show salami emojis" 
+                                    OnContent="Yes, more salami!" 
+                                    OffContent="No thanks"
+                                    IsOn="True"/>
+                        
+                        <ToggleSwitch Header="Display regional origins" 
+                                    OnContent="Enabled" 
+                                    OffContent="Disabled"
+                                    IsOn="True"/>
+                        
+                        <ToggleSwitch Header="Show cooking temperatures in Celsius" 
+                                    OnContent="Celsius (°C)" 
+                                    OffContent="Fahrenheit (°F)"/>
+
+                        <StackPanel Spacing="8">
+                            <TextBlock Text="Font Size" FontSize="18" FontWeight="SemiBold"/>
+                            <Slider Minimum="12" Maximum="24" Value="16" Width="300" 
+                                   HorizontalAlignment="Left" StepFrequency="2"/>
+                            <TextBlock Text="Adjust text size for better readability" 
+                                      FontSize="14" Opacity="0.6"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Content Preferences -->
+            <StackPanel Spacing="16">
+                <Border Background="{StaticResource SalamiRed}" 
+                       CornerRadius="8" 
+                       Padding="20">
+                    <TextBlock Text="📚 Content Preferences" 
+                              FontSize="28" 
+                              FontWeight="Bold"
+                              Foreground="White"/>
+                </Border>
+                
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="20">
+                        <StackPanel Spacing="8">
+                            <TextBlock Text="Favorite Salami Type" FontSize="18" FontWeight="SemiBold"/>
+                            <ComboBox PlaceholderText="Select your favorite" SelectedIndex="0" Width="250">
+                                <ComboBoxItem Content="Genoa Salami"/>
+                                <ComboBoxItem Content="Milano Salami"/>
+                                <ComboBoxItem Content="Soppressata"/>
+                                <ComboBoxItem Content="Chorizo"/>
+                                <ComboBoxItem Content="Calabrese"/>
+                                <ComboBoxItem Content="All of them!"/>
+                            </ComboBox>
+                        </StackPanel>
+
+                        <ToggleSwitch Header="Show spicy varieties" 
+                                    OnContent="Yes, I love spice!" 
+                                    OffContent="Mild only please"
+                                    IsOn="True"/>
+                        
+                        <ToggleSwitch Header="Include vegetarian alternatives" 
+                                    OnContent="Show alternatives" 
+                                    OffContent="Salami only"
+                                    IsOn="False"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Notifications -->
+            <StackPanel Spacing="16">
+                <Border Background="{StaticResource SalamiRed}" 
+                       CornerRadius="8" 
+                       Padding="20">
+                    <TextBlock Text="🔔 Notifications" 
+                              FontSize="28" 
+                              FontWeight="Bold"
+                              Foreground="White"/>
+                </Border>
+                
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="20">
+                        <ToggleSwitch Header="Daily salami fact" 
+                                    OnContent="Enabled" 
+                                    OffContent="Disabled"
+                                    IsOn="True"/>
+                        
+                        <ToggleSwitch Header="New recipe alerts" 
+                                    OnContent="Notify me" 
+                                    OffContent="No notifications"/>
+                        
+                        <ToggleSwitch Header="Historical salami moments" 
+                                    OnContent="Enabled" 
+                                    OffContent="Disabled"
+                                    IsOn="True"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- About Section -->
+            <StackPanel Spacing="16">
+                <Border Background="{StaticResource SalamiPink}" 
+                       CornerRadius="8" 
+                       Padding="20">
+                    <TextBlock Text="ℹ️ About" 
+                              FontSize="28" 
+                              FontWeight="Bold"
+                              Foreground="{StaticResource SalamiRed}"/>
+                </Border>
+                
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="16">
+                        <StackPanel Spacing="4">
+                            <TextBlock Text="Salami App" FontSize="24" FontWeight="SemiBold"/>
+                            <TextBlock Text="Version 1.0.0" FontSize="16" Opacity="0.6"/>
+                        </StackPanel>
+                        
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+                            A dedicated application celebrating the art, tradition, and incredible taste 
+                            of salami. Just salami. No facts, no food delivery, no distractions. 
+                            Pure salami appreciation.
+                        </TextBlock>
+
+                        <StackPanel Spacing="8">
+                            <TextBlock Text="Made with ❤️ for salami lovers everywhere" 
+                                      FontSize="16" FontStyle="Italic"/>
+                        </StackPanel>
+
+                        <StackPanel Spacing="8" Orientation="Horizontal">
+                            <Button Content="Check for Updates" 
+                                   Style="{StaticResource AccentButtonStyle}"/>
+                            <Button Content="Send Feedback" Margin="8,0,0,0"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Data Management -->
+            <StackPanel Spacing="16">
+                <Border Background="{StaticResource SalamiRed}" 
+                       CornerRadius="8" 
+                       Padding="20">
+                    <TextBlock Text="💾 Data Management" 
+                              FontSize="28" 
+                              FontWeight="Bold"
+                              Foreground="White"/>
+                </Border>
+                
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" Padding="24">
+                    <StackPanel Spacing="16">
+                        <Button Content="Reset to Default Settings" Width="250" HorizontalAlignment="Left"/>
+                        <Button Content="Clear Cache" Width="250" HorizontalAlignment="Left"/>
+                        <TextBlock Text="This will not affect your favorite salami selections" 
+                                  FontSize="14" Opacity="0.6"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
