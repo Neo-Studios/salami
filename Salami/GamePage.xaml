@@ -1,0 +1,402 @@
+<Page
+    x:Class="Salami.GamePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Salami"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" 
+                Background="{StaticResource SalamiRed}" 
+                Padding="24,16">
+            <StackPanel Spacing="8">
+                <TextBlock Text="🎮 Salami Adventure 3D" 
+                          FontSize="32" 
+                          FontWeight="Bold"
+                          Foreground="White"
+                          HorizontalAlignment="Center"/>
+                <TextBlock Text="Help Sal the Salami navigate through the Curing Chamber!" 
+                          FontSize="16"
+                          Foreground="{StaticResource SalamiPink}"
+                          HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Game Canvas -->
+        <Border Grid.Row="1" 
+                Background="#2C1810"
+                Margin="24">
+            <Grid>
+                <!-- Game Viewport -->
+                <Canvas x:Name="GameCanvas" 
+                       Background="#2C1810">
+                    <!-- 3D-style game area using 2D transforms -->
+                    
+                    <!-- Background layers for depth -->
+                    <Canvas Canvas.Left="0" Canvas.Top="0" Width="800" Height="600">
+                        <!-- Far background -->
+                        <Rectangle Width="800" Height="600" Fill="#3D2314" Opacity="0.3"/>
+                        
+                        <!-- Grid floor for 3D effect -->
+                        <Canvas x:Name="FloorGrid">
+                            <!-- Horizontal lines -->
+                            <Line X1="0" Y1="450" X2="800" Y2="450" Stroke="#8B4513" StrokeThickness="1" Opacity="0.4"/>
+                            <Line X1="0" Y1="470" X2="800" Y2="470" Stroke="#8B4513" StrokeThickness="1" Opacity="0.4"/>
+                            <Line X1="0" Y1="490" X2="800" Y2="490" Stroke="#8B4513" StrokeThickness="1" Opacity="0.4"/>
+                            <Line X1="0" Y1="510" X2="800" Y2="510" Stroke="#8B4513" StrokeThickness="1" Opacity="0.4"/>
+                            <Line X1="0" Y1="530" X2="800" Y2="530" Stroke="#8B4513" StrokeThickness="1" Opacity="0.4"/>
+                            <Line X1="0" Y1="550" X2="800" Y2="550" Stroke="#8B4513" StrokeThickness="1" Opacity="0.4"/>
+                            
+                            <!-- Vertical lines for perspective -->
+                            <Line X1="100" Y1="450" X2="100" Y2="600" Stroke="#8B4513" StrokeThickness="1" Opacity="0.3"/>
+                            <Line X1="200" Y1="450" X2="200" Y2="600" Stroke="#8B4513" StrokeThickness="1" Opacity="0.3"/>
+                            <Line X1="300" Y1="450" X2="300" Y2="600" Stroke="#8B4513" StrokeThickness="1" Opacity="0.3"/>
+                            <Line X1="400" Y1="450" X2="400" Y2="600" Stroke="#8B4513" StrokeThickness="1" Opacity="0.3"/>
+                            <Line X1="500" Y1="450" X2="500" Y2="600" Stroke="#8B4513" StrokeThickness="1" Opacity="0.3"/>
+                            <Line X1="600" Y1="450" X2="600" Y2="600" Stroke="#8B4513" StrokeThickness="1" Opacity="0.3"/>
+                            <Line X1="700" Y1="450" X2="700" Y2="600" Stroke="#8B4513" StrokeThickness="1" Opacity="0.3"/>
+                        </Canvas>
+                        
+                        <!-- Hanging salamis in background (obstacles) -->
+                        <Canvas x:Name="ObstaclesLayer">
+                            <!-- Obstacle 1 -->
+                            <Ellipse Canvas.Left="150" Canvas.Top="100" 
+                                    Width="40" Height="100" 
+                                    Fill="{StaticResource SalamiRed}" 
+                                    Opacity="0.7">
+                                <Ellipse.RenderTransform>
+                                    <CompositeTransform Rotation="10"/>
+                                </Ellipse.RenderTransform>
+                            </Ellipse>
+                            
+                            <!-- Obstacle 2 -->
+                            <Ellipse Canvas.Left="350" Canvas.Top="150" 
+                                    Width="50" Height="120" 
+                                    Fill="{StaticResource SalamiRed}" 
+                                    Opacity="0.7">
+                                <Ellipse.RenderTransform>
+                                    <CompositeTransform Rotation="-15"/>
+                                </Ellipse.RenderTransform>
+                            </Ellipse>
+                            
+                            <!-- Obstacle 3 -->
+                            <Ellipse Canvas.Left="550" Canvas.Top="80" 
+                                    Width="45" Height="110" 
+                                    Fill="{StaticResource SalamiRed}" 
+                                    Opacity="0.7">
+                                <Ellipse.RenderTransform>
+                                    <CompositeTransform Rotation="20"/>
+                                </Ellipse.RenderTransform>
+                            </Ellipse>
+                            
+                            <!-- More obstacles -->
+                            <Ellipse Canvas.Left="250" Canvas.Top="200" 
+                                    Width="35" Height="90" 
+                                    Fill="#A52A2A" 
+                                    Opacity="0.7">
+                                <Ellipse.RenderTransform>
+                                    <CompositeTransform Rotation="-10"/>
+                                </Ellipse.RenderTransform>
+                            </Ellipse>
+                            
+                            <Ellipse Canvas.Left="450" Canvas.Top="120" 
+                                    Width="42" Height="105" 
+                                    Fill="#CD5C5C" 
+                                    Opacity="0.7">
+                                <Ellipse.RenderTransform>
+                                    <CompositeTransform Rotation="12"/>
+                                </Ellipse.RenderTransform>
+                            </Ellipse>
+                            
+                            <Ellipse Canvas.Left="650" Canvas.Top="180" 
+                                    Width="38" Height="95" 
+                                    Fill="{StaticResource SalamiRed}" 
+                                    Opacity="0.7">
+                                <Ellipse.RenderTransform>
+                                    <CompositeTransform Rotation="-18"/>
+                                </Ellipse.RenderTransform>
+                            </Ellipse>
+                        </Canvas>
+                        
+                        <!-- Collectible items (cheese pieces) -->
+                        <Canvas x:Name="CollectiblesLayer">
+                            <!-- Cheese 1 -->
+                            <Polygon Canvas.Left="120" Canvas.Top="350"
+                                    Points="0,0 30,0 35,20 5,20"
+                                    Fill="#FFD700"
+                                    Stroke="#DAA520"
+                                    StrokeThickness="2"/>
+                            
+                            <!-- Cheese 2 -->
+                            <Polygon Canvas.Left="300" Canvas.Top="320"
+                                    Points="0,0 30,0 35,20 5,20"
+                                    Fill="#FFD700"
+                                    Stroke="#DAA520"
+                                    StrokeThickness="2"/>
+                            
+                            <!-- Cheese 3 -->
+                            <Polygon Canvas.Left="480" Canvas.Top="380"
+                                    Points="0,0 30,0 35,20 5,20"
+                                    Fill="#FFD700"
+                                    Stroke="#DAA520"
+                                    StrokeThickness="2"/>
+                            
+                            <!-- Cheese 4 -->
+                            <Polygon Canvas.Left="620" Canvas.Top="340"
+                                    Points="0,0 30,0 35,20 5,20"
+                                    Fill="#FFD700"
+                                    Stroke="#DAA520"
+                                    StrokeThickness="2"/>
+                            
+                            <!-- Special salami powerup -->
+                            <Ellipse Canvas.Left="400" Canvas.Top="300"
+                                    Width="30" Height="30"
+                                    Fill="{StaticResource SalamiPink}"
+                                    Stroke="{StaticResource SalamiRed}"
+                                    StrokeThickness="3">
+                                <Ellipse.RenderTransform>
+                                    <RotateTransform x:Name="PowerupRotation" CenterX="15" CenterY="15"/>
+                                </Ellipse.RenderTransform>
+                            </Ellipse>
+                        </Canvas>
+                        
+                        <!-- Player character (Sal the Salami) -->
+                        <Canvas x:Name="PlayerCanvas" Canvas.Left="375" Canvas.Top="400">
+                            <!-- Shadow -->
+                            <Ellipse Width="50" Height="15" Fill="Black" Opacity="0.3" 
+                                    Canvas.Left="-5" Canvas.Top="70"/>
+                            
+                            <!-- Salami body -->
+                            <Ellipse Width="40" Height="80" 
+                                    Fill="{StaticResource SalamiRed}"
+                                    Stroke="{StaticResource SalamiBrown}"
+                                    StrokeThickness="3">
+                                <Ellipse.RenderTransform>
+                                    <CompositeTransform x:Name="PlayerTransform"/>
+                                </Ellipse.RenderTransform>
+                            </Ellipse>
+                            
+                            <!-- Face -->
+                            <Ellipse Width="8" Height="8" Fill="Black" Canvas.Left="10" Canvas.Top="25"/>
+                            <Ellipse Width="8" Height="8" Fill="Black" Canvas.Left="22" Canvas.Top="25"/>
+                            <Path Data="M 12,35 Q 20,40 28,35" 
+                                  Stroke="Black" 
+                                  StrokeThickness="2"
+                                  Fill="Transparent"/>
+                            
+                            <!-- Arms -->
+                            <Rectangle Width="4" Height="20" 
+                                      Fill="{StaticResource SalamiRed}"
+                                      Canvas.Left="-4" Canvas.Top="35"
+                                      RadiusX="2" RadiusY="2">
+                                <Rectangle.RenderTransform>
+                                    <RotateTransform x:Name="LeftArmRotation" Angle="-30" CenterX="2" CenterY="0"/>
+                                </Rectangle.RenderTransform>
+                            </Rectangle>
+                            <Rectangle Width="4" Height="20" 
+                                      Fill="{StaticResource SalamiRed}"
+                                      Canvas.Left="40" Canvas.Top="35"
+                                      RadiusX="2" RadiusY="2">
+                                <Rectangle.RenderTransform>
+                                    <RotateTransform x:Name="RightArmRotation" Angle="30" CenterX="2" CenterY="0"/>
+                                </Rectangle.RenderTransform>
+                            </Rectangle>
+                            
+                            <!-- Legs -->
+                            <Rectangle Width="6" Height="15" 
+                                      Fill="{StaticResource SalamiRed}"
+                                      Canvas.Left="10" Canvas.Top="75"
+                                      RadiusX="3" RadiusY="3">
+                                <Rectangle.RenderTransform>
+                                    <RotateTransform x:Name="LeftLegRotation" CenterX="3" CenterY="0"/>
+                                </Rectangle.RenderTransform>
+                            </Rectangle>
+                            <Rectangle Width="6" Height="15" 
+                                      Fill="{StaticResource SalamiRed}"
+                                      Canvas.Left="24" Canvas.Top="75"
+                                      RadiusX="3" RadiusY="3">
+                                <Rectangle.RenderTransform>
+                                    <RotateTransform x:Name="RightLegRotation" CenterX="3" CenterY="0"/>
+                                </Rectangle.RenderTransform>
+                            </Rectangle>
+                        </Canvas>
+                        
+                        <!-- Goal indicator -->
+                        <Border Canvas.Left="700" Canvas.Top="50"
+                               Background="{StaticResource SalamiPink}"
+                               CornerRadius="8"
+                               Padding="12,8"
+                               BorderBrush="{StaticResource SalamiRed}"
+                               BorderThickness="2">
+                            <StackPanel>
+                                <TextBlock Text="🏁 GOAL" 
+                                          FontSize="16" 
+                                          FontWeight="Bold"
+                                          HorizontalAlignment="Center"/>
+                                <TextBlock Text="Exit" 
+                                          FontSize="12"
+                                          HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+                    </Canvas>
+                </Canvas>
+
+                <!-- Game overlay info -->
+                <StackPanel VerticalAlignment="Top" 
+                           HorizontalAlignment="Left" 
+                           Margin="20">
+                    <Border Background="{StaticResource SalamiRed}" 
+                           CornerRadius="8" 
+                           Padding="16,12">
+                        <StackPanel Spacing="8">
+                            <TextBlock Text="SCORE" 
+                                      FontSize="14" 
+                                      FontWeight="Bold"
+                                      Foreground="White"/>
+                            <TextBlock x:Name="ScoreText" 
+                                      Text="0" 
+                                      FontSize="32" 
+                                      FontWeight="Bold"
+                                      Foreground="{StaticResource SalamiPink}"/>
+                        </StackPanel>
+                    </Border>
+                    
+                    <Border Background="{StaticResource SalamiRed}" 
+                           CornerRadius="8" 
+                           Padding="16,12"
+                           Margin="0,12,0,0">
+                        <StackPanel Spacing="8">
+                            <TextBlock Text="CHEESE 🧀" 
+                                      FontSize="14" 
+                                      FontWeight="Bold"
+                                      Foreground="White"/>
+                            <TextBlock x:Name="CheeseCountText" 
+                                      Text="0/4" 
+                                      FontSize="24" 
+                                      FontWeight="Bold"
+                                      Foreground="#FFD700"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+
+                <!-- Timer -->
+                <Border VerticalAlignment="Top" 
+                       HorizontalAlignment="Right" 
+                       Margin="20"
+                       Background="{StaticResource SalamiRed}" 
+                       CornerRadius="8" 
+                       Padding="16,12">
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="⏱️ TIME" 
+                                  FontSize="14" 
+                                  FontWeight="Bold"
+                                  Foreground="White"/>
+                        <TextBlock x:Name="TimerText" 
+                                  Text="0:00" 
+                                  FontSize="32" 
+                                  FontWeight="Bold"
+                                  Foreground="White"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Game over overlay -->
+                <Border x:Name="GameOverOverlay" 
+                       Background="#CC000000" 
+                       Visibility="Collapsed">
+                    <StackPanel VerticalAlignment="Center" 
+                               HorizontalAlignment="Center" 
+                               Spacing="20">
+                        <TextBlock x:Name="GameOverTitle" 
+                                  Text="🎉 VICTORY!" 
+                                  FontSize="48" 
+                                  FontWeight="Bold"
+                                  Foreground="White"
+                                  HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="FinalScoreText" 
+                                  Text="Final Score: 0" 
+                                  FontSize="24"
+                                  Foreground="{StaticResource SalamiPink}"
+                                  HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="FinalTimeText" 
+                                  Text="Time: 0:00" 
+                                  FontSize="20"
+                                  Foreground="White"
+                                  HorizontalAlignment="Center"/>
+                        <Button x:Name="RestartButton" 
+                               Content="🔄 Play Again" 
+                               FontSize="20"
+                               Click="RestartButton_Click"
+                               Style="{StaticResource AccentButtonStyle}"
+                               Padding="24,12"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+
+        <!-- Controls -->
+        <Border Grid.Row="2" 
+                Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" 
+                Padding="24,16">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Instructions -->
+                <StackPanel Grid.Column="0" Spacing="8">
+                    <TextBlock Text="🎮 CONTROLS:" FontWeight="SemiBold" FontSize="14"/>
+                    <TextBlock Text="⬆️ W or ↑ - Move Forward" FontSize="12"/>
+                    <TextBlock Text="⬇️ S or ↓ - Move Backward" FontSize="12"/>
+                    <TextBlock Text="⬅️ A or ← - Move Left" FontSize="12"/>
+                    <TextBlock Text="➡️ D or → - Move Right" FontSize="12"/>
+                </StackPanel>
+
+                <!-- Control buttons -->
+                <StackPanel Grid.Column="1" 
+                           Orientation="Horizontal" 
+                           Spacing="12"
+                           VerticalAlignment="Center">
+                    <Button x:Name="StartButton" 
+                           Content="▶️ Start Game" 
+                           Click="StartButton_Click"
+                           FontSize="18"
+                           Style="{StaticResource AccentButtonStyle}"
+                           Padding="20,10"/>
+                    <Button x:Name="PauseButton" 
+                           Content="⏸️ Pause" 
+                           Click="PauseButton_Click"
+                           FontSize="18"
+                           IsEnabled="False"
+                           Padding="20,10"/>
+                    <Button x:Name="ResetButton" 
+                           Content="🔄 Reset" 
+                           Click="ResetButton_Click"
+                           FontSize="18"
+                           Padding="20,10"/>
+                </StackPanel>
+
+                <!-- Objectives -->
+                <StackPanel Grid.Column="2" 
+                           Spacing="8" 
+                           HorizontalAlignment="Right">
+                    <TextBlock Text="🎯 OBJECTIVES:" FontWeight="SemiBold" FontSize="14"/>
+                    <TextBlock Text="✅ Collect all 4 cheese pieces" FontSize="12"/>
+                    <TextBlock Text="✅ Avoid hitting hanging salamis" FontSize="12"/>
+                    <TextBlock Text="✅ Reach the goal at the top-right" FontSize="12"/>
+                    <TextBlock Text="✅ Complete in fastest time possible!" FontSize="12"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

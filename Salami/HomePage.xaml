@@ -1,0 +1,153 @@
+<Page
+    x:Class="Salami.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Salami"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer>
+        <StackPanel Spacing="24" Padding="24">
+            <!-- Hero Section -->
+            <Grid Background="{StaticResource SalamiRed}" 
+                  CornerRadius="12" 
+                  Padding="40">
+                <StackPanel Spacing="16" HorizontalAlignment="Center">
+                    <TextBlock Text="🍖 SALAMI 🍖" 
+                              FontSize="72" 
+                              FontWeight="Bold"
+                              Foreground="White"
+                              HorizontalAlignment="Center"/>
+                    <TextBlock Text="The Perfect Cured Meat" 
+                              FontSize="32"
+                              Foreground="{StaticResource SalamiPink}"
+                              HorizontalAlignment="Center"/>
+                    <TextBlock Text="Celebrating the art, tradition, and incredible taste of salami" 
+                              FontSize="18"
+                              Foreground="White"
+                              TextWrapping="Wrap"
+                              MaxWidth="600"
+                              TextAlignment="Center"
+                              HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+
+            <!-- Welcome Text -->
+            <StackPanel Spacing="12">
+                <TextBlock Text="Welcome to Salami Central" 
+                          FontSize="36" 
+                          FontWeight="SemiBold"/>
+                <TextBlock TextWrapping="Wrap" 
+                          FontSize="16" 
+                          Opacity="0.8">
+                    This application is dedicated to one thing and one thing only: the magnificent, 
+                    savory, perfectly cured delight that is salami. No food delivery, no random facts, 
+                    just pure salami appreciation.
+                </TextBlock>
+            </StackPanel>
+
+            <!-- Feature Cards -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Card 1 -->
+                <Border Grid.Column="0" Grid.Row="0" 
+                       Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" 
+                       Padding="20" 
+                       Margin="0,0,8,8">
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="🎨 Gallery" FontSize="24" FontWeight="SemiBold"/>
+                        <TextBlock Text="Explore stunning varieties of salami from around the world" 
+                                  TextWrapping="Wrap" Opacity="0.8"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Card 2 -->
+                <Border Grid.Column="1" Grid.Row="0"
+                       Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" 
+                       Padding="20" 
+                       Margin="8,0,0,8">
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="📚 History" FontSize="24" FontWeight="SemiBold"/>
+                        <TextBlock Text="Discover the rich heritage and tradition of salami making" 
+                                  TextWrapping="Wrap" Opacity="0.8"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Card 3 -->
+                <Border Grid.Column="0" Grid.Row="1"
+                       Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" 
+                       Padding="20" 
+                       Margin="0,8,8,0">
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="👨‍🍳 Recipes" FontSize="24" FontWeight="SemiBold"/>
+                        <TextBlock Text="Delicious ways to enjoy salami in your meals" 
+                                  TextWrapping="Wrap" Opacity="0.8"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Card 4 -->
+                <Border Grid.Column="1" Grid.Row="1"
+                       Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                       CornerRadius="8" 
+                       Padding="20" 
+                       Margin="8,8,0,0">
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="⚙️ Settings" FontSize="24" FontWeight="SemiBold"/>
+                        <TextBlock Text="Customize your salami appreciation experience" 
+                                  TextWrapping="Wrap" Opacity="0.8"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <!-- Fun Facts Section -->
+            <Border Background="{StaticResource SalamiPink}" 
+                   CornerRadius="8" 
+                   Padding="24">
+                <StackPanel Spacing="12">
+                    <TextBlock Text="Why Salami is Amazing" 
+                              FontSize="28" 
+                              FontWeight="SemiBold"
+                              Foreground="{StaticResource SalamiRed}"/>
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="• Perfect blend of spices and meat" FontSize="16"/>
+                        <TextBlock Text="• Incredible variety from different regions" FontSize="16"/>
+                        <TextBlock Text="• Centuries of perfected curing techniques" FontSize="16"/>
+                        <TextBlock Text="• Pairs wonderfully with cheese and wine" FontSize="16"/>
+                        <TextBlock Text="• Great source of protein and flavor" FontSize="16"/>
+                        <TextBlock Text="• Can be enjoyed anywhere, anytime" FontSize="16"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- Quote Section -->
+            <Border BorderBrush="{StaticResource SalamiRed}" 
+                   BorderThickness="3" 
+                   CornerRadius="8" 
+                   Padding="24">
+                <StackPanel Spacing="12" HorizontalAlignment="Center">
+                    <TextBlock Text="&quot;Salami: The finest testament to the art of meat curing&quot;" 
+                              FontSize="20" 
+                              FontStyle="Italic"
+                              TextAlignment="Center"
+                              TextWrapping="Wrap"/>
+                    <TextBlock Text="- Every Salami Lover" 
+                              FontSize="14" 
+                              Opacity="0.7"
+                              TextAlignment="Center"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
