@@ -41,6 +41,7 @@ This document provides comprehensive instructions for building and deploying the
    - Download from: https://wixtoolset.org/
    - Required only if you want to create the MSI installer package
    - WiX Visual Studio extension recommended
+   - **Note:** This project uses WiX 3.x syntax. WiX 4.x has breaking changes and requires migration
 
 ### NuGet Packages
 
@@ -57,7 +58,7 @@ The following packages are automatically restored during build:
 ### Clone and Build (5 minutes)
 
 ```bash
-# 1. Clone the repository
+# 1. Clone the repository (replace with your actual repository URL)
 git clone https://github.com/Neo-Studios/salami.git
 cd salami
 
@@ -111,7 +112,7 @@ start Salami.sln
 ### Step 2: Clone the Repository
 
 ```bash
-# Using HTTPS
+# Using HTTPS (replace with your actual repository URL)
 git clone https://github.com/Neo-Studios/salami.git
 
 # Or using SSH
@@ -274,6 +275,8 @@ candle Product.wxs -ext WixUIExtension -ext WixUtilExtension
 ```bash
 # Link object file to create MSI installer
 light Product.wixobj -ext WixUIExtension -ext WixUtilExtension -out SalamiSetup.msi
+
+# Note: Remove -sval flag if present; it suppresses validation and can hide issues
 ```
 
 **Output:** `SalamiSetup.msi`
@@ -290,7 +293,7 @@ echo.
 echo Building Installer...
 cd Installer
 candle Product.wxs -ext WixUIExtension -ext WixUtilExtension
-light Product.wixobj -ext WixUIExtension -ext WixUtilExtension -out SalamiSetup.msi -sval
+light Product.wixobj -ext WixUIExtension -ext WixUtilExtension -out SalamiSetup.msi
 
 echo.
 echo Build complete! Installer: Installer\SalamiSetup.msi
@@ -418,8 +421,9 @@ nuget restore Salami.sln
 
 **Solution:**
 1. Clean the solution: Build → Clean Solution
-2. Restore NuGet packages
+2. Restore NuGet packages: Right-click Solution → Restore NuGet Packages
 3. Rebuild: Build → Rebuild Solution
+4. If issue persists, delete bin/ and obj/ folders and rebuild
 
 #### Issue: "MSB8036: The Windows SDK version was not found"
 
@@ -443,18 +447,19 @@ nuget restore Salami.sln
 **Solution:**
 1. **Check Windows version:** Must be Windows 10 1809+
 2. **Install Windows App SDK Runtime:**
-   - Download from: https://docs.microsoft.com/windows/apps/windows-app-sdk/downloads
+   - Download from: https://learn.microsoft.com/windows/apps/windows-app-sdk/downloads
 3. **Run from Visual Studio** (F5) to see error messages
 4. **Check Event Viewer:** Windows Logs → Application
 
 #### Issue: WiX build fails with "The system cannot find the file referenced"
 
-**Cause:** Application not built before installer, or incorrect paths
+**Cause:** Application not built before installer, or incorrect paths in WiX configuration
 
 **Solution:**
 1. Build Release configuration first
 2. Verify `x64\Release\Salami.exe` exists
 3. Check file paths in `Product.wxs`
+4. Ensure all referenced files exist
 
 ### Performance Issues
 
@@ -485,7 +490,8 @@ If you encounter issues not covered here:
    ```bash
    msbuild Salami.sln /v:detailed > build.log 2>&1
    ```
-4. **Create an issue:** https://github.com/Neo-Studios/salami/issues
+4. **Search existing issues:** Check repository issues for similar problems
+5. **Create an issue:** Report build problems with logs and environment details
 
 ---
 
@@ -648,11 +654,11 @@ After successfully building:
 
 ## Additional Resources
 
-- **WinUI 3 Documentation:** https://docs.microsoft.com/windows/apps/winui/
-- **C++/WinRT Guide:** https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/
-- **Windows App SDK:** https://docs.microsoft.com/windows/apps/windows-app-sdk/
+- **WinUI 3 Documentation:** https://learn.microsoft.com/windows/apps/winui/
+- **C++/WinRT Guide:** https://learn.microsoft.com/windows/uwp/cpp-and-winrt-apis/
+- **Windows App SDK:** https://learn.microsoft.com/windows/apps/windows-app-sdk/
 - **WiX Toolset:** https://wixtoolset.org/documentation/
-- **Visual Studio C++:** https://docs.microsoft.com/cpp/
+- **Visual Studio C++:** https://learn.microsoft.com/cpp/
 
 ---
 
